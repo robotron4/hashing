@@ -1,16 +1,14 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
-import sha256 from "crypto-js/sha256";
 import SHA256 from "crypto-js/sha256";
-
-function App() {
+import CreateHash from "./CreateHash";
+import hash from 'hash.js';
+function App() {  
   const [count, setCount] = useState(0);
-  console.log("hello = " + SHA256("hello"));
+  const test = hash.sha256().update('ewafew').digest('hex');
+  const something = SHA256('something');
   return (
-    <>
-      <div>cwegbverfve</div>{" "}
+    <>xwfws {test}
     </>
   );
 }
