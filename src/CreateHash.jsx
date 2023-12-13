@@ -1,6 +1,7 @@
-import { SHA256 } from "crypto-js"
+import hash from "hash.js"
 
 export default function CreateHash({text}) {
+    const test = hash.sha256().update(text).digest('hex');
 
-    return <p>{SHA256(text)}</p>
+    return <p>{test}</p>
 }
