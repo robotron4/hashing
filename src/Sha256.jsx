@@ -1,6 +1,9 @@
 import hash from "hash.js";
+import { useState } from "react";
 
-export default function CreateHash({ text }) {
+export default function CreateHash() {
+  const [text, setText] = useState(null);
+
   return (
     <>
       <h2 className="text-2xl font-semibold mx-auto my-2 tracking-wider w-1/3 underline underline-offset-8 mt-6">
@@ -14,6 +17,15 @@ export default function CreateHash({ text }) {
         new, unrecognizable data string of a fixed length. This string of random
         characters and numbers, called a hash value, is also 256 bits in size.
       </p>
+
+      <p className="text-lg mx-auto my-2 tracking-wider w-1/3 ">Input:</p>
+      <input
+        type="text"
+        placeholder="enter some text ... "
+        value={text}
+        className="text-zinc-50 w-1/3 mx-auto h-24 text-center bg-background-soft rounded-xl"
+        onChange={(e) => setText(e.target.value)}
+      />
       <p className="text-lg mx-auto my-2 tracking-wider w-1/3">Output:</p>
 
       <div className="mx-auto w-1/3 text-center border-4 p-5 rounded-xl border-background-soft mb-6">

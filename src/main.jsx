@@ -5,6 +5,7 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RootLayout from "./routes/RootLayout.jsx";
 import Sha1 from "./Sha1.jsx";
+import Sha256 from "./Sha256.jsx";
 
 const router = createBrowserRouter([
   {
@@ -12,8 +13,12 @@ const router = createBrowserRouter([
     element: <RootLayout />,
     children: [
       {
-        path: "/Sha1",
+        path: "/sha1",
         element: <Sha1 />,
+      },
+      {
+        path: "/sha256",
+        element: <Sha256 />,
       },
     ],
   },

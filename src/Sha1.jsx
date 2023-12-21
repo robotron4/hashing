@@ -1,6 +1,10 @@
 import hash from "hash.js";
+import InputVal from "./components/InputVal";
+import { useState } from "react";
 
-export default function Sha1({ text }) {
+export default function Sha1() {
+  const [text, setText] = useState(null);
+
   return (
     <>
       <h2 className="text-2xl font-semibold mx-auto my-2 tracking-wider w-1/3 underline underline-offset-8 mt-6">
@@ -18,6 +22,15 @@ export default function Sha1({ text }) {
         calculate cryptographic hashing value in Java, MessageDigest Class is
         used, under the package java.security.
       </p>
+
+      <p className="text-lg mx-auto my-2 tracking-wider w-1/3 ">Input:</p>
+      <input
+        type="text"
+        placeholder="enter some text ... "
+        value={text}
+        className="text-zinc-50 w-1/3 mx-auto h-24 text-center bg-background-soft rounded-xl"
+        onChange={(e) => setText(e.target.value)}
+      />
       <p className="text-lg mx-auto my-2 tracking-wider w-1/3">Output:</p>
 
       <div className="mx-auto w-1/3 text-center border-4 p-5 rounded-xl border-background-soft mb-8">
