@@ -6,6 +6,7 @@ export default {
       colors: {
         background: "#0f172a",
         "background-soft": "#172343",
+        "accent-color": "#ff9502",
       },
     },
   },
